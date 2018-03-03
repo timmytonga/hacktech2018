@@ -1,6 +1,6 @@
 import requests
 
-subscription_key = "72849a2b1dc84c10841e9df1103667ff"
+subscription_key = "72849a2b1dc84c10841e9df1103667ff"
 
 assert subscription_key
 

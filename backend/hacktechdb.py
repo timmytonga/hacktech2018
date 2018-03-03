@@ -57,9 +57,9 @@ class receipt:
 
     def getMySQLValues(self):
         ''' return a string that can be insert into a mysql database'''
-        result = '(' + self.date + ', '        # an int in format yyyymmdd
+        result = '(' + str(self.date) + ', '        # an int in format yyyymmdd
         result += "'" + self.item + "', "      # a string 
-        result += "" + self.cost + ", "
+        result += "" + str(self.cost) + ", "
         result += "'" + self.place + "', "
         result += "'" + self.category + "')"
         return result

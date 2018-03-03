@@ -57,9 +57,9 @@ class receipt:
 
     def getMySQLValues(self):
         ''' return a string that can be insert into a mysql database'''
-        result = '(' + self.date + ', '        # an int in format yyyymmdd
+        result = '(' + str(self.date) + ', '        # an int in format yyyymmdd
         result += "'" + self.item + "', "      # a string 
-        result += "" + self.cost + ", "
+        result += "" + str(self.cost) + ", "
         result += "'" + self.place + "', "
         result += "'" + self.category + "')"
         return result
@@ -88,7 +88,7 @@ def getURL():       # return a string for the URL
     result = db.query(select_query)
     db.close()
     return result
- 
+    
 if __name__ == "__main__":
     print("Sending a test receipt and also trying to get a URL")
     print("Getting URL...")
