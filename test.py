@@ -44,10 +44,34 @@ def get_text_from_img(url):
             pass
         if ( "Total" in i[1]):
             flag = 1
+    
         
+def extract_str_date(s):
+    """given a string s in format of 03 / 02/ 2018 or 03/02/2018 or 
+        03-02-2018 or 03 02 2018 
+        -> return appropriate format: 20180302 for mysql query"""
+    pass
+
+def extract_cost(s):
+    """ given a cost string in format of 48 02 or 48.02 or $48.02 or 
+        total = 48.02, etc... => extract the number and return
+        4802 (can be int or str doesnt matter)  --> result will be in cents"""
+    pass
+
+def get_category(s):
+    """ given an input str, determine the category from the list of available category
+    Potential: when user corrects a category, update frequency list and have
+    the algorithm predict better category depending on the input
+    E.g.: McDonalds -> food, Chevron -> gas, shirts -> clothings, etc.
+    -----> Can we search online for word -> use MS API to obtain tags -> scan tags for categories"""
+
+    list_of_cat = ['food', 'clothings', 'gas', 'groceries', 'medical']
+    possible_mapping = {'food':{'mcdonalds','orange'}, 'clothings':{'shirts','pants','skirts', 'dress'}}
+    pass
 
 
-
+def uploadtoDB(date, item, place, cost):
+    """ receive info about the date, item, place, cost """
 if __name__ == "__main__":
     url = "https://www.blogography.com/photos70/McDonaldsEggAndCheese.jpg"
     get_text_from_img(url)
